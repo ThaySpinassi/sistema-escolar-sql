@@ -1,57 +1,77 @@
-# 🏫 Projeto SQL: Sistema de Gestão Escolar Fictício
+# 🏫 Projeto SQL: Sistema de Gestão Escolar
 
-### 📖 Visão Geral do Projeto
+### 📖 Visão Geral
 
-Este repositório contém o esquema de banco de dados e scripts de dados para simular um sistema de gestão de dados acadêmicos para uma escola fictícia.
+Este repositório reúne a modelagem do banco de dados, scripts SQL e análises elaboradas para simular um sistema de gestão escolar.
 
-O projeto foi desenvolvido para fins de aprendizado e demonstração em modelagem de dados, DDL (Data Definition Language), DML (Data Manipulation Language) e consultas complexas no ambiente **SQLite**.
+O projeto foi desenvolvido para fins de aprendizado, aplicando modelagem de dados, DDL (Data Definition Language), DML (Data Manipulation Language) e consultas analíticas em **SQLite**.
+
+Além do código, o projeto acompanha um relatório visual e completo hospedado no **Notion**, onde todo o processo - da modelagem às análises - é apresentado de forma didática.
+
+---
+
+### 🚀 Relatório Completo (Documentação Visual)
+
+Você pode acessar a documentação detalhada no link abaixo:
+
+| Documento | Formato | Link |
+| :--- | :--- | :--- |
+| **Relatório Completo (Notion)** | Visual/Interativo | 🔗 [Link para o Notion](https://www.notion.so/Sistema-de-Gest-o-Escolar-Projeto-SQL-2afa5e4f6d0c8090930af300a5da2b55?source=copy_link) |
+| **Relatório em PDF (Backup)** | Arquivo | 🔗 [Link para o PDF](https://github.com/ThaySpinassi/sistema-escolar-sql/tree/e4fb07dc1f02088ef1e0fad43094d75905b26ad3/docs) |
+
+---
 
 ### 🛠️ Estrutura do Banco de Dados
 
-O banco de dados é composto por **7 tabelas** que mapeiam as relações essenciais de uma instituição de ensino, incluindo alunos, professores, turmas, disciplinas e um registro de notas.
+O banco de dados é composto por **7 tabelas**, representando as entidades principais de um ambiente escolar:
 
-O modelo relacional suporta as seguintes entidades:
 * `alunos`
 * `professores`
 * `disciplinas`
 * `turmas`
-* `turma_disciplinas` (N:N)
-* `turma_alunos` (N:N)
+* `turma_disciplinas` (relação N:N)
+* `turma_alunos` (relação N:N)
 * `notas`
+
+A modelagem aborda relacionamentos essenciais para registrar matrículas, alocação de professores, estrutura curricular e desempenho dos estudantes.
 
 ---
 
 ### 📂 Arquivos do Repositório
 
-O projeto está organizado em três arquivos principais, seguindo um fluxo de trabalho lógico para a criação e teste do banco de dados:
-
 | Arquivo | Conteúdo | Objetivo |
 | :--- | :--- | :--- |
-| `create_table.sql` | Comandos DDL (`CREATE TABLE`). | Cria todas as 7 tabelas com definição de Chaves Primárias e Estrangeiras. |
-| `insert_data.sql` | Comandos DML (`INSERT INTO`). | Popula o banco com dados de teste (25 alunos, 7 professores, 151 registros de notas, etc.). |
-| `queries.sql` | Consultas SQL de teste (19 queries). | Demonstra a manipulação e análise dos dados (cálculo de médias, porcentagem de aprovação, `GROUP BY`, `HAVING`, `VIEW`). |
+| `create_table.sql` | Comandos DDL (`CREATE TABLE`). | Cria as 7 tabelas do banco. |
+| `insert_data.sql` | Comandos DML (`INSERT INTO`). | Popula o banco com dados fictícios (25 alunos, 7 professores, 151 registros de notas, etc.). |
+| `queries.sql` | 19 consultas SQL | Analisa desepenho escolar, aprovações, disciplina x alunos, estatísticas etc. |
 
 ---
 
-### 📊 Consultas e Análises Destaques
+### 📊 Consultas e Análises de Destaque
 
-O script `queries.sql` aborda diversos cenários de negócio, demonstrando soluções para relatórios comuns:
+O script `queries.sql` simulam diversos cenários reais enfrentrados por uma gestão escolar, demonstrando soluções para relatórios comuns:
 
 * **Média e Aprovação:** Cálculo da média final dos alunos e indicação de `Aprovado/Reprovado` (Média >= 6.00).
 * **Análise Estatística:** Cálculo da **porcentagem de aprovação** geral da escola e por disciplina.
 * **Consultas Avançadas:** Uso de `JOINs` múltiplos, `GROUP BY`, `HAVING` e `CASE WHEN` para filtrar e agregar dados de desempenho.
 * **Gestão:** Identificação de professores orientadores, contagem de alunos por turma e disciplinas por turma.
 
-### 🚀 Como Executar o Projeto
+Algumas dessas análises são apresentadas de forma visual no relatório do Notion, com prints, interpretações e insights de negócio.
 
-Para replicar o ambiente de banco de dados, você precisa de um cliente **SQLite**.
+---
 
-1.  **Crie o Banco:** Crie um novo arquivo de banco de dados vazio (ex: `escola.db`).
+### ▶️ Como Executar o Projeto
+
+Para rodar o projeto localmente, é necessário utilizar **SQLite**.
+
+1.  **Criar o Banco:** Crie um novo arquivo de banco de dados vazio (ex: `escola.db`).
 2.  **Estrutura:** Execute o script `create_table.sql` para criar todas as tabelas.
 3.  **Dados:** Execute o script `insert_data.sql` para popular as tabelas.
 4.  **Testes:** Execute as consultas em `queries.sql` para validar as análises e o desempenho.
 
-### 🧑‍💻 Contato
+---
+
+### 🧑‍💻 Autoria
 
 Desenvolvido por: **Thaynara Spinassi**
 
